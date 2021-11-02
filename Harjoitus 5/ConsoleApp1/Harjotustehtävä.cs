@@ -12,7 +12,7 @@ namespace HarjousTehtävä
         {
             int num = 0;
             bool Start = true;
-            //meowoooooiuu
+            //meowoooooiuupåoåpoåpoåoåp
             Tehtävä1 t1 = new Tehtävä1();
             Tehtävä2 t2 = new Tehtävä2();
             Tehtävä5 t5 = new Tehtävä5();
