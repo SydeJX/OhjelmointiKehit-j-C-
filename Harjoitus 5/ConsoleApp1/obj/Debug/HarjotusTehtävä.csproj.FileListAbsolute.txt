@@ -1,0 +1,14 @@
+C:\Users\massanka.tecassala\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\massanka.tecassala\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\massanka.tecassala\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\massanka.tecassala\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\HarjotusTehtävä.csproj.CoreCompileInputs.cache
+C:\Users\massanka.tecassala\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\massanka.tecassala\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\jordi\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\jordi\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\jordi\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\jordi\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\HarjotusTehtävä.csprojAssemblyReference.cache
+C:\Users\jordi\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\HarjotusTehtävä.csproj.CoreCompileInputs.cache
+C:\Users\jordi\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\jordi\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\massanka.tecassala\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\HarjotusTehtävä.csprojAssemblyReference.cache
