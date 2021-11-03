@@ -12,9 +12,9 @@ namespace HarjousTehtävä
         public void tehtävä10()
         {
 
-            int answernumber;
+            long answernumber;
             Console.Write("Please write the number you want to be calculated: ");
-            answernumber = int.Parse(Console.ReadLine());
+            answernumber = long.Parse(Console.ReadLine());
             for (int num = 1; num < 11; num++)
             {
                 Console.Write(answernumber + " * " + num + " = ");

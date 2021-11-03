@@ -53,6 +53,7 @@
     <Compile Include="Tehtävä15.cs" />
     <Compile Include="Tehtävä16.cs" />
     <Compile Include="Tehtävä2.cs" />
+    <Compile Include="Tehtävä3.cs" />
     <Compile Include="Tehtävä5.cs" />
     <Compile Include="Tehtävät17.cs" />
   </ItemGroup>
