@@ -30,6 +30,9 @@ namespace Forum_Mysql
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelID = new System.Windows.Forms.Label();
             this.TextID = new System.Windows.Forms.TextBox();
             this.LabelName = new System.Windows.Forms.Label();
@@ -45,6 +48,8 @@ namespace Forum_Mysql
             this.StudentText = new System.Windows.Forms.TextBox();
             this.labelStudent = new System.Windows.Forms.Label();
             this.InsertButton = new System.Windows.Forms.Button();
+            this.DataGirdView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).BeginInit();
             this.SuspendLayout();
             // 
             // labelID
@@ -57,10 +62,13 @@ namespace Forum_Mysql
             this.labelID.Size = new System.Drawing.Size(40, 25);
             this.labelID.TabIndex = 0;
             this.labelID.Text = "ID:";
+            this.labelID.Click += new System.EventHandler(this.labelID_Click);
             // 
             // TextID
             // 
+            this.TextID.BackColor = System.Drawing.Color.Black;
             this.TextID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextID.ForeColor = System.Drawing.Color.Transparent;
             this.TextID.Location = new System.Drawing.Point(135, 151);
             this.TextID.Name = "TextID";
             this.TextID.Size = new System.Drawing.Size(193, 22);
@@ -80,11 +88,14 @@ namespace Forum_Mysql
             // 
             // FirstNText
             // 
+            this.FirstNText.BackColor = System.Drawing.Color.Black;
             this.FirstNText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FirstNText.ForeColor = System.Drawing.Color.Transparent;
             this.FirstNText.Location = new System.Drawing.Point(135, 107);
             this.FirstNText.Name = "FirstNText";
             this.FirstNText.Size = new System.Drawing.Size(193, 22);
             this.FirstNText.TabIndex = 3;
+            this.FirstNText.TextChanged += new System.EventHandler(this.FirstNText_TextChanged);
             // 
             // LabelLastname
             // 
@@ -99,19 +110,25 @@ namespace Forum_Mysql
             // 
             // LastnameText
             // 
+            this.LastnameText.BackColor = System.Drawing.Color.Black;
             this.LastnameText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LastnameText.ForeColor = System.Drawing.Color.Transparent;
             this.LastnameText.Location = new System.Drawing.Point(595, 107);
             this.LastnameText.Name = "LastnameText";
             this.LastnameText.Size = new System.Drawing.Size(201, 22);
             this.LastnameText.TabIndex = 5;
+            this.LastnameText.TextChanged += new System.EventHandler(this.LastnameText_TextChanged);
             // 
             // OldYText
             // 
+            this.OldYText.BackColor = System.Drawing.Color.Black;
             this.OldYText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OldYText.ForeColor = System.Drawing.Color.Transparent;
             this.OldYText.Location = new System.Drawing.Point(595, 155);
             this.OldYText.Name = "OldYText";
             this.OldYText.Size = new System.Drawing.Size(201, 22);
             this.OldYText.TabIndex = 7;
+            this.OldYText.TextChanged += new System.EventHandler(this.OldYText_TextChanged);
             // 
             // Labelyearold
             // 
@@ -127,11 +144,14 @@ namespace Forum_Mysql
             // EmailText
             // 
             this.EmailText.AcceptsReturn = true;
+            this.EmailText.BackColor = System.Drawing.Color.Black;
             this.EmailText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmailText.ForeColor = System.Drawing.Color.Transparent;
             this.EmailText.Location = new System.Drawing.Point(135, 199);
             this.EmailText.Name = "EmailText";
             this.EmailText.Size = new System.Drawing.Size(193, 22);
             this.EmailText.TabIndex = 9;
+            this.EmailText.TextChanged += new System.EventHandler(this.EmailText_TextChanged);
             // 
             // labelEmail
             // 
@@ -147,11 +167,14 @@ namespace Forum_Mysql
             // PhoneText
             // 
             this.PhoneText.AcceptsReturn = true;
+            this.PhoneText.BackColor = System.Drawing.Color.Black;
             this.PhoneText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PhoneText.ForeColor = System.Drawing.Color.Transparent;
             this.PhoneText.Location = new System.Drawing.Point(595, 203);
             this.PhoneText.Name = "PhoneText";
             this.PhoneText.Size = new System.Drawing.Size(201, 22);
             this.PhoneText.TabIndex = 11;
+            this.PhoneText.TextChanged += new System.EventHandler(this.PhoneText_TextChanged);
             // 
             // labelPhone
             // 
@@ -166,8 +189,10 @@ namespace Forum_Mysql
             // 
             // StudentText
             // 
+            this.StudentText.BackColor = System.Drawing.Color.Black;
             this.StudentText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.StudentText.Location = new System.Drawing.Point(346, 68);
+            this.StudentText.ForeColor = System.Drawing.Color.Transparent;
+            this.StudentText.Location = new System.Drawing.Point(346, 48);
             this.StudentText.Name = "StudentText";
             this.StudentText.Size = new System.Drawing.Size(193, 22);
             this.StudentText.TabIndex = 13;
@@ -177,7 +202,7 @@ namespace Forum_Mysql
             this.labelStudent.AutoSize = true;
             this.labelStudent.BackColor = System.Drawing.Color.Transparent;
             this.labelStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStudent.Location = new System.Drawing.Point(362, 40);
+            this.labelStudent.Location = new System.Drawing.Point(361, 20);
             this.labelStudent.Name = "labelStudent";
             this.labelStudent.Size = new System.Drawing.Size(168, 25);
             this.labelStudent.TabIndex = 12;
@@ -193,13 +218,49 @@ namespace Forum_Mysql
             this.InsertButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.InsertButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.InsertButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.InsertButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.InsertButton.Location = new System.Drawing.Point(268, 255);
+            this.InsertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsertButton.ForeColor = System.Drawing.Color.Teal;
+            this.InsertButton.Location = new System.Drawing.Point(244, 253);
             this.InsertButton.Name = "InsertButton";
             this.InsertButton.Size = new System.Drawing.Size(134, 38);
             this.InsertButton.TabIndex = 14;
             this.InsertButton.Text = "Insert";
             this.InsertButton.UseVisualStyleBackColor = false;
+            // 
+            // DataGirdView
+            // 
+            this.DataGirdView.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGirdView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGirdView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGirdView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGirdView.Location = new System.Drawing.Point(12, 321);
+            this.DataGirdView.Name = "DataGirdView";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGirdView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGirdView.RowHeadersWidth = 51;
+            this.DataGirdView.RowTemplate.Height = 24;
+            this.DataGirdView.Size = new System.Drawing.Size(850, 258);
+            this.DataGirdView.TabIndex = 15;
             // 
             // form1
             // 
@@ -209,6 +270,7 @@ namespace Forum_Mysql
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(874, 591);
+            this.Controls.Add(this.DataGirdView);
             this.Controls.Add(this.InsertButton);
             this.Controls.Add(this.StudentText);
             this.Controls.Add(this.labelStudent);
@@ -225,14 +287,17 @@ namespace Forum_Mysql
             this.Controls.Add(this.TextID);
             this.Controls.Add(this.labelID);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.MaximizeBox = false;
             this.Name = "form1";
             this.Text = "MySql Form";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(12)))));
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,6 +320,7 @@ namespace Forum_Mysql
         private System.Windows.Forms.TextBox StudentText;
         public System.Windows.Forms.Label labelStudent;
         private System.Windows.Forms.Button InsertButton;
+        private System.Windows.Forms.DataGridView DataGirdView;
     }
 }
 
