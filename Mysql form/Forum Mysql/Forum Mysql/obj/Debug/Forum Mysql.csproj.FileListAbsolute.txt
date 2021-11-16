@@ -1,0 +1,10 @@
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\bin\Debug\Forum Mysql.exe.config
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\bin\Debug\Forum Mysql.exe
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\bin\Debug\Forum Mysql.pdb
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\obj\Debug\Forum Mysql.csprojAssemblyReference.cache
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\obj\Debug\Forum_Mysql.form1.resources
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\obj\Debug\Forum_Mysql.Properties.Resources.resources
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\obj\Debug\Forum Mysql.csproj.GenerateResource.cache
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\obj\Debug\Forum Mysql.csproj.CoreCompileInputs.cache
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\obj\Debug\Forum Mysql.exe
+C:\Users\jordi\OneDrive\Asiakirjat\GitHub\OhjelmointiKehit-j-C-\Mysql form\Forum Mysql\Forum Mysql\obj\Debug\Forum Mysql.pdb
