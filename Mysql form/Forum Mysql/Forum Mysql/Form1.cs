@@ -16,7 +16,11 @@ namespace Forum_Mysql
 
         private bool mouseDown;
         private Point lastLocation;
-
+        private bool studentsW;
+    /*
+    * Loading
+    * Loading Functions
+    */ 
         public form1()
         {
             InitializeComponent();
@@ -24,7 +28,9 @@ namespace Forum_Mysql
 
         private void Form1_Load(object sender, PaintEventArgs e)
         {
-
+            Students student = new Students();
+            DataGirdView.DataSource = student.GetFemaleStudents();
+            CurrentLabel.Text = "Current Table: Famale Table";
 
         }
 
@@ -47,7 +53,7 @@ namespace Forum_Mysql
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-           if (mouseDown)
+            if (mouseDown)
             {
                 this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
                 this.Update();
@@ -58,6 +64,33 @@ namespace Forum_Mysql
         {
             mouseDown = false;
         }
+
+        private void DataGirdView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+
+
+        /*
+         * 
+         * Functions for the buttons
+         */
+
+
+
+
+
+
+
+
+
+
 
 
     }

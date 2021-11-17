@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using MySql.Data;
+using System.Data;
 
 namespace Forum_Mysql
 {
@@ -15,7 +17,7 @@ namespace Forum_Mysql
         public bool AddStudents(int Old, string Fname, string Lname, string email, string phone, int StudentNumber)
         {
             MySqlCommand Command = new MySqlCommand();
-            string AddQuestion = "INSERT INTO information " +
+            string AddQuestion = "INSERT INTO female_students " +
                 "(Old, FirstName, LastName, Email, StudentNumber) " +
                 "VALUES (@old, @enm, @snm, @eml, @puh, @ono); ";
 
@@ -29,6 +31,50 @@ namespace Forum_Mysql
             Command.Parameters.Add("@puh", MySqlDbType.VarChar).Value = phone;
             Command.Parameters.Add("@ono", MySqlDbType.VarChar).Value = StudentNumber;
 
+            connect.StartConnection();
+            if (Command.ExecuteNonQuery() == 1)
+            {
+                connect.CloseConnection();
+                return true;
+            }
+            else
+            {
+                connect.CloseConnection();
+                return false;
+            }
+
+        }
+
+        public DataTable GetFemaleStudents()
+        {
+            MySqlCommand Command = new MySqlCommand("SELECT * FROM female_students", connect.Inject());
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            adapter.SelectCommand = Command;
+            adapter.Fill(table);
+
+            return table;
+        }
+
+        public DataTable GetMaleStudents()
+        {
+            MySqlCommand Command = new MySqlCommand("SELECT * FROM male_students", connect.Inject());
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            adapter.SelectCommand = Command;
+            adapter.Fill(table);
+
+            return table;
+        }
+
+
+        public bool EditStudents(int Old, string Fname, string Lname, string email, string phone, int StudentNumber)
+        {
+
+            MySqlCommand Command = new MySqlCommand();
+            string UpdateQuestion = "Update `female_students` SET `Etunimi` = @old"
 
 
 
@@ -36,6 +82,8 @@ namespace Forum_Mysql
 
             return false;
         }
+
+
 
 
 

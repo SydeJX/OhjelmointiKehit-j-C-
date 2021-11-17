@@ -53,6 +53,7 @@ namespace Forum_Mysql
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
             this.AlphaText = new System.Windows.Forms.Label();
+            this.CurrentLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -178,6 +179,7 @@ namespace Forum_Mysql
             resources.ApplyResources(this.DataGirdView, "DataGirdView");
             this.DataGirdView.Name = "DataGirdView";
             this.DataGirdView.RowTemplate.Height = 24;
+            this.DataGirdView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGirdView_CellContentClick);
             // 
             // ButtonShut
             // 
@@ -218,6 +220,7 @@ namespace Forum_Mysql
             this.MinimizeButton.ForeColor = System.Drawing.Color.White;
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.UseVisualStyleBackColor = false;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // CloseButton
             // 
@@ -237,12 +240,19 @@ namespace Forum_Mysql
             this.AlphaText.BackColor = System.Drawing.Color.Transparent;
             this.AlphaText.Name = "AlphaText";
             // 
+            // CurrentLabel
+            // 
+            resources.ApplyResources(this.CurrentLabel, "CurrentLabel");
+            this.CurrentLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CurrentLabel.Name = "CurrentLabel";
+            // 
             // form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.CurrentLabel);
             this.Controls.Add(this.AlphaText);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ButtonShut);
@@ -300,6 +310,7 @@ namespace Forum_Mysql
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label AlphaText;
+        private System.Windows.Forms.Label CurrentLabel;
     }
 }
 

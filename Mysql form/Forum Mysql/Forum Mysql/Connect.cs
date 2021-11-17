@@ -15,7 +15,7 @@ namespace Forum_Mysql
             return "datasource=loccalhost; port=3306;username=root;password=;database:students";
         }
 
-        private MySqlConnection connect = new MySqlConnection("datasource=loccalhost; port=3306;username=root;password=;database:students");
+        private MySqlConnection connect = new MySqlConnection("datasource=localhost; port=3306;username=root;password=;database=students");
 
         public MySqlConnection Inject()
         {
