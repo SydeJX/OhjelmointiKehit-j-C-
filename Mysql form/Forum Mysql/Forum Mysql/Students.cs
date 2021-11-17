@@ -24,12 +24,12 @@ namespace Forum_Mysql
             Command.CommandText = AddQuestion;
             Command.Connection = connect.Inject();
 
-            Command.Parameters.Add("@old", MySqlDbType.VarChar).Value = Old;
+            Command.Parameters.Add("@old", MySqlDbType.Int32).Value = Old;
             Command.Parameters.Add("@enm", MySqlDbType.VarChar).Value = Fname;
             Command.Parameters.Add("@snm", MySqlDbType.VarChar).Value = Lname;
             Command.Parameters.Add("@eml", MySqlDbType.VarChar).Value = email;
             Command.Parameters.Add("@puh", MySqlDbType.VarChar).Value = phone;
-            Command.Parameters.Add("@ono", MySqlDbType.VarChar).Value = StudentNumber;
+            Command.Parameters.Add("@ono", MySqlDbType.Int32).Value = StudentNumber;
 
             connect.StartConnection();
             if (Command.ExecuteNonQuery() == 1)
@@ -74,7 +74,9 @@ namespace Forum_Mysql
         {
 
             MySqlCommand Command = new MySqlCommand();
-            string UpdateQuestion = "Update `female_students` SET `Etunimi` = @old"
+            string UpdateQuestion = "Update `female_students` SET `Etunimi` = @old," +
+                "(`Old` = @old, FirstName, LastName, Email, StudentNumber) " +
+                "VALUES (@old, @enm, @snm, @eml, @puh, @ono); ";
 
 
 
