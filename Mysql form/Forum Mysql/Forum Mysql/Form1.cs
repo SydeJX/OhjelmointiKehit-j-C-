@@ -13,6 +13,10 @@ namespace Forum_Mysql
 {
     public partial class form1 : Form
     {
+
+        private bool mouseDown;
+        private Point lastLocation;
+
         public form1()
         {
             InitializeComponent();
@@ -21,36 +25,41 @@ namespace Forum_Mysql
         private void Form1_Load(object sender, PaintEventArgs e)
         {
 
-            ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
 
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            
-        }
         private void ButtonShut_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        public void button1_MouseLeave(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.Transparent;
-
-        }
-
-
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-
-            button1.BackColor = Color.Red;
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+           if (mouseDown)
+            {
+                this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                this.Update();
+            }
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+
     }
 }
+

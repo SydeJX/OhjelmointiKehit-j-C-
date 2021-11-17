@@ -49,9 +49,13 @@ namespace Forum_Mysql
             this.DataGirdView = new System.Windows.Forms.DataGridView();
             this.ButtonShut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MinimizeButton = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.AlphaText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelID
@@ -87,6 +91,7 @@ namespace Forum_Mysql
             // 
             resources.ApplyResources(this.LabelLastname, "LabelLastname");
             this.LabelLastname.BackColor = System.Drawing.Color.Transparent;
+            this.LabelLastname.ForeColor = System.Drawing.Color.Black;
             this.LabelLastname.Name = "LabelLastname";
             // 
             // LastnameText
@@ -162,7 +167,7 @@ namespace Forum_Mysql
             this.InsertButton.CausesValidation = false;
             this.InsertButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.InsertButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.InsertButton.ForeColor = System.Drawing.Color.Teal;
+            this.InsertButton.ForeColor = System.Drawing.Color.SpringGreen;
             this.InsertButton.Name = "InsertButton";
             this.InsertButton.UseVisualStyleBackColor = false;
             // 
@@ -181,34 +186,64 @@ namespace Forum_Mysql
             this.ButtonShut.CausesValidation = false;
             this.ButtonShut.Cursor = System.Windows.Forms.Cursors.Default;
             this.ButtonShut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonShut.ForeColor = System.Drawing.Color.Teal;
+            this.ButtonShut.ForeColor = System.Drawing.Color.SpringGreen;
             this.ButtonShut.Name = "ButtonShut";
             this.ButtonShut.UseVisualStyleBackColor = false;
             this.ButtonShut.Click += new System.EventHandler(this.ButtonShut_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.MinimizeButton);
+            this.panel1.Controls.Add(this.CloseButton);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
+            // MinimizeButton
+            // 
+            resources.ApplyResources(this.MinimizeButton, "MinimizeButton");
+            this.MinimizeButton.BackColor = System.Drawing.Color.Black;
+            this.MinimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MinimizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.MinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.MinimizeButton.ForeColor = System.Drawing.Color.White;
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.UseVisualStyleBackColor = false;
+            // 
+            // CloseButton
+            // 
+            resources.ApplyResources(this.CloseButton, "CloseButton");
+            this.CloseButton.BackColor = System.Drawing.Color.Black;
+            this.CloseButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.CloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.CloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.CloseButton.ForeColor = System.Drawing.Color.White;
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.ButtonShut_Click);
+            // 
+            // AlphaText
+            // 
+            resources.ApplyResources(this.AlphaText, "AlphaText");
+            this.AlphaText.BackColor = System.Drawing.Color.Transparent;
+            this.AlphaText.Name = "AlphaText";
             // 
             // form1
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.AlphaText);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ButtonShut);
             this.Controls.Add(this.DataGirdView);
@@ -227,7 +262,6 @@ namespace Forum_Mysql
             this.Controls.Add(this.LabelName);
             this.Controls.Add(this.TextID);
             this.Controls.Add(this.labelID);
-            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -236,6 +270,7 @@ namespace Forum_Mysql
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,7 +296,10 @@ namespace Forum_Mysql
         private System.Windows.Forms.DataGridView DataGirdView;
         private System.Windows.Forms.Button ButtonShut;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button MinimizeButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label AlphaText;
     }
 }
 
