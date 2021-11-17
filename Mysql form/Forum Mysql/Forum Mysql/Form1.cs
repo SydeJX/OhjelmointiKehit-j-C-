@@ -16,7 +16,7 @@ namespace Forum_Mysql
 
         private bool mouseDown;
         private Point lastLocation;
-        private bool studentsW;
+        private bool Female = false;
     /*
     * Loading
     * Loading Functions
@@ -24,24 +24,10 @@ namespace Forum_Mysql
         public form1()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, PaintEventArgs e)
-        {
+            Female = true;
             Students student = new Students();
             DataGirdView.DataSource = student.GetFemaleStudents();
             CurrentLabel.Text = "Current Table: Famale Table";
-
-        }
-
-        private void ButtonShut_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void CloseButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -73,6 +59,61 @@ namespace Forum_Mysql
         private void MinimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ButtonChange_Click(object sender, EventArgs e)
+        {
+            if (Female)
+            {
+                Female = false;
+                Students student = new Students();
+                DataGirdView.DataSource = student.GetMaleStudents();
+                CurrentLabel.Text = "Current Table: Male Table";
+            } else
+            {
+                Female = true;
+                Students student = new Students();
+                DataGirdView.DataSource = student.GetFemaleStudents();
+                CurrentLabel.Text = "Current Table: Famale Table";
+            
+            }
+
+          
+
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void InsertButton_Click(object sender, EventArgs e)
+        {
+            Students student = new Students();
+            int YearOld = int.Parse(OldYText.Text);
+            string FName = FirstNText.Text;
+            string Lname = LastnameText.Text;
+            string Email = EmailText.Text;
+            string Phone = PhoneText.Text;
+            int StudentNumber = int.Parse(TextID.Text);
+
+            if (FName.Trim().Equals("") || Lname.Trim().Equals("") || Phone.Trim().Equals("") || Email.Trim().Equals("") || StudentNumber.Trim().Equals("") || YearOld.Trim().Equals(""))
+            {
+                MessageBox.Show("Please fill up all the boxes in order to continue", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                bool AddStudent = student.AddStudents(YearOld, FName, Lname, Email, Phone, StudentNumber);
+                if (AddStudent)
+                {
+                    
+                }
+            }
+
+
+
+
+
+
         }
 
 

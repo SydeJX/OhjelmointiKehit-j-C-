@@ -47,16 +47,20 @@ namespace Forum_Mysql
             this.labelStudent = new System.Windows.Forms.Label();
             this.InsertButton = new System.Windows.Forms.Button();
             this.DataGirdView = new System.Windows.Forms.DataGridView();
-            this.ButtonShut = new System.Windows.Forms.Button();
+            this.ButtonChange = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
             this.AlphaText = new System.Windows.Forms.Label();
             this.CurrentLabel = new System.Windows.Forms.Label();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.CorrectPicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorrectPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // labelID
@@ -171,6 +175,7 @@ namespace Forum_Mysql
             this.InsertButton.ForeColor = System.Drawing.Color.SpringGreen;
             this.InsertButton.Name = "InsertButton";
             this.InsertButton.UseVisualStyleBackColor = false;
+            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
             // DataGirdView
             // 
@@ -181,20 +186,21 @@ namespace Forum_Mysql
             this.DataGirdView.RowTemplate.Height = 24;
             this.DataGirdView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGirdView_CellContentClick);
             // 
-            // ButtonShut
+            // ButtonChange
             // 
-            resources.ApplyResources(this.ButtonShut, "ButtonShut");
-            this.ButtonShut.BackColor = System.Drawing.Color.Black;
-            this.ButtonShut.CausesValidation = false;
-            this.ButtonShut.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ButtonShut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonShut.ForeColor = System.Drawing.Color.SpringGreen;
-            this.ButtonShut.Name = "ButtonShut";
-            this.ButtonShut.UseVisualStyleBackColor = false;
-            this.ButtonShut.Click += new System.EventHandler(this.ButtonShut_Click);
+            resources.ApplyResources(this.ButtonChange, "ButtonChange");
+            this.ButtonChange.BackColor = System.Drawing.Color.Black;
+            this.ButtonChange.CausesValidation = false;
+            this.ButtonChange.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ButtonChange.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.ButtonChange.ForeColor = System.Drawing.Color.SpringGreen;
+            this.ButtonChange.Name = "ButtonChange";
+            this.ButtonChange.UseVisualStyleBackColor = false;
+            this.ButtonChange.Click += new System.EventHandler(this.ButtonChange_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.CorrectPicture);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.MinimizeButton);
             this.panel1.Controls.Add(this.CloseButton);
@@ -232,7 +238,7 @@ namespace Forum_Mysql
             this.CloseButton.ForeColor = System.Drawing.Color.White;
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.UseVisualStyleBackColor = false;
-            this.CloseButton.Click += new System.EventHandler(this.ButtonShut_Click);
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // AlphaText
             // 
@@ -246,16 +252,47 @@ namespace Forum_Mysql
             this.CurrentLabel.BackColor = System.Drawing.Color.Transparent;
             this.CurrentLabel.Name = "CurrentLabel";
             // 
+            // EditButton
+            // 
+            resources.ApplyResources(this.EditButton, "EditButton");
+            this.EditButton.BackColor = System.Drawing.Color.Black;
+            this.EditButton.CausesValidation = false;
+            this.EditButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.EditButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.EditButton.ForeColor = System.Drawing.Color.SpringGreen;
+            this.EditButton.Name = "EditButton";
+            this.EditButton.UseVisualStyleBackColor = false;
+            // 
+            // DeleteButton
+            // 
+            resources.ApplyResources(this.DeleteButton, "DeleteButton");
+            this.DeleteButton.BackColor = System.Drawing.Color.Black;
+            this.DeleteButton.CausesValidation = false;
+            this.DeleteButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DeleteButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.DeleteButton.ForeColor = System.Drawing.Color.SpringGreen;
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            // 
+            // CorrectPicture
+            // 
+            this.CorrectPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.CorrectPicture, "CorrectPicture");
+            this.CorrectPicture.Name = "CorrectPicture";
+            this.CorrectPicture.TabStop = false;
+            // 
             // form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.EditButton);
             this.Controls.Add(this.CurrentLabel);
             this.Controls.Add(this.AlphaText);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ButtonShut);
+            this.Controls.Add(this.ButtonChange);
             this.Controls.Add(this.DataGirdView);
             this.Controls.Add(this.InsertButton);
             this.Controls.Add(this.StudentText);
@@ -277,10 +314,10 @@ namespace Forum_Mysql
             this.MaximizeBox = false;
             this.Name = "form1";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(12)))));
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorrectPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,13 +341,16 @@ namespace Forum_Mysql
         public System.Windows.Forms.Label labelStudent;
         private System.Windows.Forms.Button InsertButton;
         private System.Windows.Forms.DataGridView DataGirdView;
-        private System.Windows.Forms.Button ButtonShut;
+        private System.Windows.Forms.Button ButtonChange;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label AlphaText;
         private System.Windows.Forms.Label CurrentLabel;
+        private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.PictureBox CorrectPicture;
     }
 }
 

@@ -18,7 +18,7 @@ namespace Forum_Mysql
         {
             MySqlCommand Command = new MySqlCommand();
             string AddQuestion = "INSERT INTO female_students " +
-                "(Old, FirstName, LastName, Email, StudentNumber) " +
+                "(Old, FirstName, LastName, Email, Phone, StudentNumber) " +
                 "VALUES (@old, @enm, @snm, @eml, @puh, @ono); ";
 
             Command.CommandText = AddQuestion;
@@ -74,18 +74,58 @@ namespace Forum_Mysql
         {
 
             MySqlCommand Command = new MySqlCommand();
-            string UpdateQuestion = "Update `female_students` SET `Etunimi` = @old," +
-                "(`Old` = @old, FirstName, LastName, Email, StudentNumber) " +
-                "VALUES (@old, @enm, @snm, @eml, @puh, @ono); ";
+            string UpdateQuestion = "UPDATE `female_students` SET " + 
+                "`Firstname` = @enm, `Lastname` = @snm, `Email` = @eml, `Phone` = @puh, " +
+                "`StudentNumber` = @ono WHERE Old = @old";
+            //""
 
+            Command.CommandText = UpdateQuestion;
+            Command.Connection = connect.Inject();
+            Command.Parameters.Add("@old", MySqlDbType.Int32).Value = Old;
+            Command.Parameters.Add("@enm", MySqlDbType.VarChar).Value = Fname;
+            Command.Parameters.Add("@snm", MySqlDbType.VarChar).Value = Lname;
+            Command.Parameters.Add("@eml", MySqlDbType.VarChar).Value = email;
+            Command.Parameters.Add("@puh", MySqlDbType.VarChar).Value = phone;
+            Command.Parameters.Add("@ono", MySqlDbType.Int32).Value = StudentNumber;
 
+            connect.StartConnection();
+            if (Command.ExecuteNonQuery() == 1)
+            {
+                connect.CloseConnection();
+                return true;
+            }
+            {
 
+                connect.CloseConnection();
+                return false;
 
+            }
 
-            return false;
+            
         }
 
+        public bool DeleteStudent(string KnownN)
+        {
+            MySqlCommand command = new MySqlCommand();
+            string deleteQuestion = "DELETE FROM yhteystiedot WHERE Old = @old";
+            command.CommandText = deleteQuestion;
+            command.Connection = connect.Inject();
 
+            command.Parameters.Add("@old", MySqlDbType.UInt32).Value = KnownN;
+
+            connect.StartConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                connect.CloseConnection();
+                return true;
+            } else
+            {
+                connect.CloseConnection();
+                return false;
+            }
+
+
+        }
 
 
 
