@@ -1,4 +1,5 @@
-﻿
+﻿using System.Drawing;
+using System.Windows;
 namespace Forum_Mysql
 {
     partial class form1
@@ -30,9 +31,6 @@ namespace Forum_Mysql
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelID = new System.Windows.Forms.Label();
             this.TextID = new System.Windows.Forms.TextBox();
             this.LabelName = new System.Windows.Forms.Label();
@@ -49,97 +47,69 @@ namespace Forum_Mysql
             this.labelStudent = new System.Windows.Forms.Label();
             this.InsertButton = new System.Windows.Forms.Button();
             this.DataGirdView = new System.Windows.Forms.DataGridView();
+            this.ButtonShut = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelID
             // 
-            this.labelID.AutoSize = true;
+            resources.ApplyResources(this.labelID, "labelID");
             this.labelID.BackColor = System.Drawing.Color.Transparent;
-            this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.Location = new System.Drawing.Point(89, 151);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(40, 25);
-            this.labelID.TabIndex = 0;
-            this.labelID.Text = "ID:";
-            this.labelID.Click += new System.EventHandler(this.labelID_Click);
             // 
             // TextID
             // 
             this.TextID.BackColor = System.Drawing.Color.Black;
             this.TextID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextID.ForeColor = System.Drawing.Color.Transparent;
-            this.TextID.Location = new System.Drawing.Point(135, 151);
+            resources.ApplyResources(this.TextID, "TextID");
             this.TextID.Name = "TextID";
-            this.TextID.Size = new System.Drawing.Size(193, 22);
-            this.TextID.TabIndex = 1;
-            this.TextID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // LabelName
             // 
-            this.LabelName.AutoSize = true;
+            resources.ApplyResources(this.LabelName, "LabelName");
             this.LabelName.BackColor = System.Drawing.Color.Transparent;
-            this.LabelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelName.Location = new System.Drawing.Point(15, 103);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(114, 25);
-            this.LabelName.TabIndex = 2;
-            this.LabelName.Text = "Firstname:";
             // 
             // FirstNText
             // 
             this.FirstNText.BackColor = System.Drawing.Color.Black;
             this.FirstNText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FirstNText.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.FirstNText.ForeColor = System.Drawing.Color.Transparent;
-            this.FirstNText.Location = new System.Drawing.Point(135, 107);
+            resources.ApplyResources(this.FirstNText, "FirstNText");
             this.FirstNText.Name = "FirstNText";
-            this.FirstNText.Size = new System.Drawing.Size(193, 22);
-            this.FirstNText.TabIndex = 3;
-            this.FirstNText.TextChanged += new System.EventHandler(this.FirstNText_TextChanged);
             // 
             // LabelLastname
             // 
-            this.LabelLastname.AutoSize = true;
+            resources.ApplyResources(this.LabelLastname, "LabelLastname");
             this.LabelLastname.BackColor = System.Drawing.Color.Transparent;
-            this.LabelLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelLastname.Location = new System.Drawing.Point(476, 103);
             this.LabelLastname.Name = "LabelLastname";
-            this.LabelLastname.Size = new System.Drawing.Size(113, 25);
-            this.LabelLastname.TabIndex = 4;
-            this.LabelLastname.Text = "Lastname:";
             // 
             // LastnameText
             // 
             this.LastnameText.BackColor = System.Drawing.Color.Black;
             this.LastnameText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LastnameText.ForeColor = System.Drawing.Color.Transparent;
-            this.LastnameText.Location = new System.Drawing.Point(595, 107);
+            resources.ApplyResources(this.LastnameText, "LastnameText");
             this.LastnameText.Name = "LastnameText";
-            this.LastnameText.Size = new System.Drawing.Size(201, 22);
-            this.LastnameText.TabIndex = 5;
-            this.LastnameText.TextChanged += new System.EventHandler(this.LastnameText_TextChanged);
             // 
             // OldYText
             // 
             this.OldYText.BackColor = System.Drawing.Color.Black;
             this.OldYText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OldYText.ForeColor = System.Drawing.Color.Transparent;
-            this.OldYText.Location = new System.Drawing.Point(595, 155);
+            resources.ApplyResources(this.OldYText, "OldYText");
             this.OldYText.Name = "OldYText";
-            this.OldYText.Size = new System.Drawing.Size(201, 22);
-            this.OldYText.TabIndex = 7;
-            this.OldYText.TextChanged += new System.EventHandler(this.OldYText_TextChanged);
             // 
             // Labelyearold
             // 
-            this.Labelyearold.AutoSize = true;
+            resources.ApplyResources(this.Labelyearold, "Labelyearold");
             this.Labelyearold.BackColor = System.Drawing.Color.Transparent;
-            this.Labelyearold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Labelyearold.Location = new System.Drawing.Point(474, 151);
             this.Labelyearold.Name = "Labelyearold";
-            this.Labelyearold.Size = new System.Drawing.Size(115, 25);
-            this.Labelyearold.TabIndex = 6;
-            this.Labelyearold.Text = "Years Old:";
             // 
             // EmailText
             // 
@@ -147,22 +117,14 @@ namespace Forum_Mysql
             this.EmailText.BackColor = System.Drawing.Color.Black;
             this.EmailText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EmailText.ForeColor = System.Drawing.Color.Transparent;
-            this.EmailText.Location = new System.Drawing.Point(135, 199);
+            resources.ApplyResources(this.EmailText, "EmailText");
             this.EmailText.Name = "EmailText";
-            this.EmailText.Size = new System.Drawing.Size(193, 22);
-            this.EmailText.TabIndex = 9;
-            this.EmailText.TextChanged += new System.EventHandler(this.EmailText_TextChanged);
             // 
             // labelEmail
             // 
-            this.labelEmail.AutoSize = true;
+            resources.ApplyResources(this.labelEmail, "labelEmail");
             this.labelEmail.BackColor = System.Drawing.Color.Transparent;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(57, 195);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(72, 25);
-            this.labelEmail.TabIndex = 8;
-            this.labelEmail.Text = "Email:";
             // 
             // PhoneText
             // 
@@ -170,106 +132,85 @@ namespace Forum_Mysql
             this.PhoneText.BackColor = System.Drawing.Color.Black;
             this.PhoneText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PhoneText.ForeColor = System.Drawing.Color.Transparent;
-            this.PhoneText.Location = new System.Drawing.Point(595, 203);
+            resources.ApplyResources(this.PhoneText, "PhoneText");
             this.PhoneText.Name = "PhoneText";
-            this.PhoneText.Size = new System.Drawing.Size(201, 22);
-            this.PhoneText.TabIndex = 11;
-            this.PhoneText.TextChanged += new System.EventHandler(this.PhoneText_TextChanged);
             // 
             // labelPhone
             // 
-            this.labelPhone.AutoSize = true;
+            resources.ApplyResources(this.labelPhone, "labelPhone");
             this.labelPhone.BackColor = System.Drawing.Color.Transparent;
-            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(434, 200);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(162, 25);
-            this.labelPhone.TabIndex = 10;
-            this.labelPhone.Text = "Phone Number:";
             // 
             // StudentText
             // 
             this.StudentText.BackColor = System.Drawing.Color.Black;
             this.StudentText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StudentText.ForeColor = System.Drawing.Color.Transparent;
-            this.StudentText.Location = new System.Drawing.Point(346, 48);
+            resources.ApplyResources(this.StudentText, "StudentText");
             this.StudentText.Name = "StudentText";
-            this.StudentText.Size = new System.Drawing.Size(193, 22);
-            this.StudentText.TabIndex = 13;
             // 
             // labelStudent
             // 
-            this.labelStudent.AutoSize = true;
+            resources.ApplyResources(this.labelStudent, "labelStudent");
             this.labelStudent.BackColor = System.Drawing.Color.Transparent;
-            this.labelStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStudent.Location = new System.Drawing.Point(361, 20);
             this.labelStudent.Name = "labelStudent";
-            this.labelStudent.Size = new System.Drawing.Size(168, 25);
-            this.labelStudent.TabIndex = 12;
-            this.labelStudent.Text = "Student Number";
             // 
             // InsertButton
             // 
-            this.InsertButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.InsertButton, "InsertButton");
             this.InsertButton.BackColor = System.Drawing.Color.Black;
-            this.InsertButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("InsertButton.BackgroundImage")));
-            this.InsertButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.InsertButton.CausesValidation = false;
             this.InsertButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.InsertButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.InsertButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.InsertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsertButton.ForeColor = System.Drawing.Color.Teal;
-            this.InsertButton.Location = new System.Drawing.Point(244, 253);
             this.InsertButton.Name = "InsertButton";
-            this.InsertButton.Size = new System.Drawing.Size(134, 38);
-            this.InsertButton.TabIndex = 14;
-            this.InsertButton.Text = "Insert";
             this.InsertButton.UseVisualStyleBackColor = false;
             // 
             // DataGirdView
             // 
             this.DataGirdView.BackgroundColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGirdView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGirdView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGirdView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGirdView.Location = new System.Drawing.Point(12, 321);
+            resources.ApplyResources(this.DataGirdView, "DataGirdView");
             this.DataGirdView.Name = "DataGirdView";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGirdView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.DataGirdView.RowHeadersWidth = 51;
             this.DataGirdView.RowTemplate.Height = 24;
-            this.DataGirdView.Size = new System.Drawing.Size(850, 258);
-            this.DataGirdView.TabIndex = 15;
+            // 
+            // ButtonShut
+            // 
+            resources.ApplyResources(this.ButtonShut, "ButtonShut");
+            this.ButtonShut.BackColor = System.Drawing.Color.Black;
+            this.ButtonShut.CausesValidation = false;
+            this.ButtonShut.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ButtonShut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.ButtonShut.ForeColor = System.Drawing.Color.Teal;
+            this.ButtonShut.Name = "ButtonShut";
+            this.ButtonShut.UseVisualStyleBackColor = false;
+            this.ButtonShut.Click += new System.EventHandler(this.ButtonShut_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button1);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(874, 591);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ButtonShut);
             this.Controls.Add(this.DataGirdView);
             this.Controls.Add(this.InsertButton);
             this.Controls.Add(this.StudentText);
@@ -287,17 +228,14 @@ namespace Forum_Mysql
             this.Controls.Add(this.TextID);
             this.Controls.Add(this.labelID);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "form1";
-            this.Text = "MySql Form";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(12)))));
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,6 +259,9 @@ namespace Forum_Mysql
         public System.Windows.Forms.Label labelStudent;
         private System.Windows.Forms.Button InsertButton;
         private System.Windows.Forms.DataGridView DataGirdView;
+        private System.Windows.Forms.Button ButtonShut;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

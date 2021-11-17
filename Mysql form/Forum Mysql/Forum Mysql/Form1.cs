@@ -18,47 +18,39 @@ namespace Forum_Mysql
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, PaintEventArgs e)
         {
 
-
-
+            ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        protected override void OnPaint(PaintEventArgs e)
         {
+            
+        }
+        private void ButtonShut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Transparent;
 
         }
 
-        private void FirstNText_TextChanged(object sender, EventArgs e)
+
+        private void button1_MouseHover(object sender, EventArgs e)
         {
+
+            button1.BackColor = Color.Red;
 
         }
 
-        private void EmailText_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void LastnameText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void OldYText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PhoneText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelID_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }
