@@ -30,6 +30,7 @@ namespace Forum_Mysql
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
             this.labelID = new System.Windows.Forms.Label();
             this.TextID = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@ namespace Forum_Mysql
             this.DataGirdView = new System.Windows.Forms.DataGridView();
             this.ButtonChange = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CorrectPicture = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
@@ -56,11 +58,12 @@ namespace Forum_Mysql
             this.CurrentLabel = new System.Windows.Forms.Label();
             this.EditButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
-            this.CorrectPicture = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CorrectPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelID
@@ -207,6 +210,13 @@ namespace Forum_Mysql
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // CorrectPicture
+            // 
+            this.CorrectPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.CorrectPicture, "CorrectPicture");
+            this.CorrectPicture.Name = "CorrectPicture";
+            this.CorrectPicture.TabStop = false;
+            // 
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
@@ -274,12 +284,15 @@ namespace Forum_Mysql
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.UseVisualStyleBackColor = false;
             // 
-            // CorrectPicture
+            // timer1
             // 
-            this.CorrectPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.CorrectPicture, "CorrectPicture");
-            this.CorrectPicture.Name = "CorrectPicture";
-            this.CorrectPicture.TabStop = false;
+            this.timer1.Interval = 200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 2000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // form1
             // 
@@ -316,8 +329,8 @@ namespace Forum_Mysql
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(12)))));
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CorrectPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,6 +364,8 @@ namespace Forum_Mysql
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.PictureBox CorrectPicture;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

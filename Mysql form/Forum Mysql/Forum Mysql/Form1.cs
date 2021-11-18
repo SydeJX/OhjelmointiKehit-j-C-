@@ -17,17 +17,24 @@ namespace Forum_Mysql
         private bool mouseDown;
         private Point lastLocation;
         private bool Female = false;
-    /*
-    * Loading
-    * Loading Functions
-    */ 
+        Students student = new Students();
+        public int count = 1;
+        public bool error = false;
+        /*
+        * Loading
+        * Loading Functions
+        */
         public form1()
         {
             InitializeComponent();
             Female = true;
-            Students student = new Students();
             DataGirdView.DataSource = student.GetFemaleStudents();
             CurrentLabel.Text = "Current Table: Famale Table";
+            if (DataGirdView == null || DataGirdView.Rows.Count == 0)
+            {
+                CurrentLabel.Text = "Error: Couldn't connect to the table!";
+            }
+
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -63,22 +70,60 @@ namespace Forum_Mysql
 
         private void ButtonChange_Click(object sender, EventArgs e)
         {
+
             if (Female)
             {
                 Female = false;
-                Students student = new Students();
                 DataGirdView.DataSource = student.GetMaleStudents();
                 CurrentLabel.Text = "Current Table: Male Table";
-            } else
-            {
+            } else {
                 Female = true;
-                Students student = new Students();
                 DataGirdView.DataSource = student.GetFemaleStudents();
                 CurrentLabel.Text = "Current Table: Famale Table";
             
             }
 
-          
+           if (DataGirdView == null || DataGirdView.Rows.Count == 0)
+            {
+                
+                switch (count)
+                {
+                    
+                    case 3:
+                        CurrentLabel.Text = "Error: Are you Serious?!";
+                        count++;
+                        break;
+                    case 5:
+                        CurrentLabel.Text = "Error: Bruh...";
+                        count++;
+                        break;
+                    case 7:
+                        CurrentLabel.Text = "Error: I just told you, that I can't connect!!!";
+                        count++;
+                        break;
+                    case 8:
+                        CurrentLabel.Text = "Error: Stop, your slowing down process memory, I think....";
+                        count++;
+                        break;
+                    case 9:
+                        CurrentLabel.Text = "Error: I Swear! One more time and I'll quit.";
+                        count++;
+                        break;
+                    case 10:
+                        CurrentLabel.Text = "Error: Forget this, Imma spam.";
+                        ButtonChange.Enabled = false;
+                        timer1.Start();
+                        break;
+                    default:
+                        count++;
+                        CurrentLabel.Text = "Error: Couldn't connect to the table!";
+                        break;
+                }
+                
+            }else
+            {
+                count = 1;
+            }
 
         }
 
@@ -89,17 +134,20 @@ namespace Forum_Mysql
 
         private void InsertButton_Click(object sender, EventArgs e)
         {
-            Students student = new Students();
             int YearOld = int.Parse(OldYText.Text);
             string FName = FirstNText.Text;
             string Lname = LastnameText.Text;
             string Email = EmailText.Text;
             string Phone = PhoneText.Text;
-            int StudentNumber = int.Parse(TextID.Text);
+            int StudentNumber = int.Parse(StudentText.Text);
 
-            if (FName.Trim().Equals("") || Lname.Trim().Equals("") || Phone.Trim().Equals("") || Email.Trim().Equals("") || StudentNumber.Trim().Equals("") || YearOld.Trim().Equals(""))
+            if (FName.Trim().Equals("") || Lname.Trim().Equals("") || Phone.Trim().Equals("") || Email.Trim().Equals("") || StudentNumber.Equals("") || YearOld.Equals(""))
             {
-                MessageBox.Show("Please fill up all the boxes in order to continue", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CorrectPicture.BackColor = Color.Red;
+                CorrectPicture.Show();
+                timer2.Start();
+                CurrentLabel.Text = "Error: Please fill up all the boxes in order to continue";                
+                error = true;
             } else
             {
                 bool AddStudent = student.AddStudents(YearOld, FName, Lname, Email, Phone, StudentNumber);
@@ -114,6 +162,29 @@ namespace Forum_Mysql
 
 
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                MessageBox.Show("STOP!!!", "Message From Admin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            this.Close();
+            timer1.Stop();
+           
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (error)
+            {
+                CorrectPicture.Hide();
+                CorrectPicture.BackColor = Color.Green;
+                error = false;
+                timer2.Stop();
+
+            }
         }
 
 

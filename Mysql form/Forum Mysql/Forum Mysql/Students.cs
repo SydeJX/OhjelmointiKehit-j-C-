@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+using System.ComponentModel;
 using System.Data;
 
 namespace Forum_Mysql
@@ -52,9 +53,16 @@ namespace Forum_Mysql
             DataTable table = new DataTable();
 
             adapter.SelectCommand = Command;
-            adapter.Fill(table);
-
-            return table;
+            try
+            {
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception ex)
+            {
+                return table;
+                
+            }
         }
 
         public DataTable GetMaleStudents()
@@ -64,9 +72,17 @@ namespace Forum_Mysql
             DataTable table = new DataTable();
 
             adapter.SelectCommand = Command;
-            adapter.Fill(table);
+            try
+            {
+                adapter.Fill(table);
+                
+                return table;
+            }
+            catch (Exception ex)
+            {
+                return table;
 
-            return table;
+            }
         }
 
 
