@@ -134,35 +134,84 @@ namespace Forum_Mysql
 
         private void InsertButton_Click(object sender, EventArgs e)
         {
-            int YearOld = int.Parse(OldYText.Text);
-            string FName = FirstNText.Text;
-            string Lname = LastnameText.Text;
-            string Email = EmailText.Text;
-            string Phone = PhoneText.Text;
-            int StudentNumber = int.Parse(StudentText.Text);
-
-            if (FName.Trim().Equals("") || Lname.Trim().Equals("") || Phone.Trim().Equals("") || Email.Trim().Equals("") || StudentNumber.Equals("") || YearOld.Equals(""))
+            int YearOld = 0;
+            int StudentNumber = 0;
+            string Phone = null;
+            string Email = null;
+            string Lname = null;
+            string FName = null;
+            try
+            {
+                 YearOld = int.Parse(OldYText.Text);
+                 FName = FirstNText.Text;
+                 Lname = LastnameText.Text;
+                 Email = EmailText.Text;
+                 Phone = PhoneText.Text;
+                 StudentNumber = int.Parse(StudentText.Text);
+                error = false;
+            } catch (Exception ex)
             {
                 CorrectPicture.BackColor = Color.Red;
                 CorrectPicture.Show();
                 timer2.Start();
-                CurrentLabel.Text = "Error: Please fill up all the boxes in order to continue";                
+                MessageBox.Show("There might be a character in the wrong box, please remove it","Error from System", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 error = true;
-            } else
+            }
+
+            if (Female && !error)
             {
-                bool AddStudent = student.AddStudents(YearOld, FName, Lname, Email, Phone, StudentNumber);
-                if (AddStudent)
+
+                if (FName.Trim().Equals("") || Lname.Trim().Equals("") || Phone.Trim().Equals("") || Email.Trim().Equals("") || StudentNumber.Equals("") || YearOld.Equals(""))
                 {
-                    
+                    CorrectPicture.BackColor = Color.Red;
+                    CorrectPicture.Show();
+                    timer2.Start();
+                    CurrentLabel.Text = "Error: Please fill up all the boxes in order to continue";
+                    error = true;
+                }
+                else
+                {
+                    bool AddStudent = student.AddStudentsFemale(YearOld, FName, Lname, Email, Phone, StudentNumber);
+                    if (AddStudent)
+                    {
+                        CurrentLabel.Text = "Succeeded";
+                    }
+                    else
+                    {
+                        CurrentLabel.Text = "Couldn't insert anyone into the form";
+                    }
+                }
+            } else if (!Female && !error)
+            {
+                if (FName.Trim().Equals("") || Lname.Trim().Equals("") || Phone.Trim().Equals("") || Email.Trim().Equals("") || StudentNumber.Equals("") || YearOld.Equals(""))
+                {
+                    CorrectPicture.BackColor = Color.Red;
+                    CorrectPicture.Show();
+                    timer2.Start();
+                    CurrentLabel.Text = "Error: Please fill up all the boxes in order to continue";
+                    error = true;
+                }
+                else
+                {
+                    bool AddStudent = student.AddStudentsMale(YearOld, FName, Lname, Email, Phone, StudentNumber);
+                    if (AddStudent)
+                    {
+                        CurrentLabel.Text = "Succeeded";
+                    }
+                    else
+                    {
+                        CorrectPicture.BackColor = Color.Red;
+                        CorrectPicture.Show();
+                        timer2.Start();
+                        CurrentLabel.Text = "Error: Couldn't insert anyone into the form";
+                    }
                 }
             }
 
 
-
-
-
-
         }
+
+            
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -184,8 +233,39 @@ namespace Forum_Mysql
                 error = false;
                 timer2.Stop();
 
+            } else
+            {
+                CorrectPicture.Hide();
+                timer2.Stop();
+            }
+
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            string idelet = StudentText.Text;
+            if (Female)
+            {
+                if (student.DeleteStudentFemale(idelet))
+                    CurrentLabel.Text = "Successfully deleted Female Student";
+                else
+                    CurrentLabel.Text = "Error: Failed to deleted because such user doesn't exist";
+
+            } else if (!Female)
+            {
+                if (student.DeleteStudentMale(idelet))
+                    CurrentLabel.Text = "Successfully deleted Male Student";
+                else
+                    CurrentLabel.Text = "Error: Failed to deleted because such user doesn't exist";
             }
         }
+
+        private void labelEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    
 
 
 

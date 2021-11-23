@@ -117,65 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="labelID.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="labelID.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelID.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="labelID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 151</value>
-  </data>
-  <data name="labelID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 25</value>
-  </data>
-  <data name="labelID.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="labelID.Text" xml:space="preserve">
-    <value>ID:</value>
-  </data>
-  <data name="&gt;&gt;labelID.Name" xml:space="preserve">
-    <value>labelID</value>
-  </data>
-  <data name="&gt;&gt;labelID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelID.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelID.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="TextID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 151</value>
-  </data>
-  <data name="TextID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
-  </data>
-  <data name="TextID.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;TextID.Name" xml:space="preserve">
-    <value>TextID</value>
-  </data>
-  <data name="&gt;&gt;TextID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextID.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TextID.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
   <data name="LabelName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
@@ -231,7 +177,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="LabelLastname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>476, 103</value>
+    <value>16, 152</value>
   </data>
   <data name="LabelLastname.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 25</value>
@@ -255,10 +201,10 @@
     <value>17</value>
   </data>
   <data name="LastnameText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>595, 107</value>
+    <value>135, 156</value>
   </data>
   <data name="LastnameText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="LastnameText.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -276,7 +222,7 @@
     <value>16</value>
   </data>
   <data name="OldYText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>595, 155</value>
+    <value>601, 109</value>
   </data>
   <data name="OldYText.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -303,7 +249,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="Labelyearold.Location" type="System.Drawing.Point, System.Drawing">
-    <value>474, 151</value>
+    <value>480, 105</value>
   </data>
   <data name="Labelyearold.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 25</value>
@@ -327,7 +273,7 @@
     <value>15</value>
   </data>
   <data name="EmailText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 199</value>
+    <value>135, 203</value>
   </data>
   <data name="EmailText.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
@@ -354,7 +300,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="labelEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 195</value>
+    <value>57, 199</value>
   </data>
   <data name="labelEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 25</value>
@@ -378,7 +324,7 @@
     <value>13</value>
   </data>
   <data name="PhoneText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>595, 203</value>
+    <value>601, 157</value>
   </data>
   <data name="PhoneText.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -405,7 +351,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="labelPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>434, 200</value>
+    <value>440, 154</value>
   </data>
   <data name="labelPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 25</value>
@@ -429,10 +375,10 @@
     <value>11</value>
   </data>
   <data name="StudentText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 70</value>
+    <value>601, 204</value>
   </data>
   <data name="StudentText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>201, 22</value>
   </data>
   <data name="StudentText.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -456,7 +402,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="labelStudent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 42</value>
+    <value>418, 199</value>
   </data>
   <data name="labelStudent.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 25</value>
@@ -650,81 +596,6 @@
   </data>
   <data name="&gt;&gt;ButtonChange.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <metadata name="MinimizeButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CloseButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="&gt;&gt;CorrectPicture.Name" xml:space="preserve">
-    <value>CorrectPicture</value>
-  </data>
-  <data name="&gt;&gt;CorrectPicture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CorrectPicture.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;CorrectPicture.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;MinimizeButton.Name" xml:space="preserve">
-    <value>MinimizeButton</value>
-  </data>
-  <data name="&gt;&gt;MinimizeButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MinimizeButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;MinimizeButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CloseButton.Name" xml:space="preserve">
-    <value>CloseButton</value>
-  </data>
-  <data name="&gt;&gt;CloseButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CloseButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, -26</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>877, 65</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="CorrectPicture.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 25</value>
@@ -1868,6 +1739,27 @@
   </data>
   <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, -26</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>877, 65</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="AlphaText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

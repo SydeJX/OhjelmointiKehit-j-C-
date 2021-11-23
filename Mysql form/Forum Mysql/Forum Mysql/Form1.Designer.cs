@@ -32,8 +32,6 @@ namespace Forum_Mysql
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
-            this.labelID = new System.Windows.Forms.Label();
-            this.TextID = new System.Windows.Forms.TextBox();
             this.LabelName = new System.Windows.Forms.Label();
             this.FirstNText = new System.Windows.Forms.TextBox();
             this.LabelLastname = new System.Windows.Forms.Label();
@@ -65,20 +63,6 @@ namespace Forum_Mysql
             ((System.ComponentModel.ISupportInitialize)(this.CorrectPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labelID
-            // 
-            resources.ApplyResources(this.labelID, "labelID");
-            this.labelID.BackColor = System.Drawing.Color.Transparent;
-            this.labelID.Name = "labelID";
-            // 
-            // TextID
-            // 
-            this.TextID.BackColor = System.Drawing.Color.Black;
-            this.TextID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextID.ForeColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.TextID, "TextID");
-            this.TextID.Name = "TextID";
             // 
             // LabelName
             // 
@@ -138,6 +122,7 @@ namespace Forum_Mysql
             resources.ApplyResources(this.labelEmail, "labelEmail");
             this.labelEmail.BackColor = System.Drawing.Color.Transparent;
             this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Click += new System.EventHandler(this.labelEmail_Click);
             // 
             // PhoneText
             // 
@@ -283,6 +268,7 @@ namespace Forum_Mysql
             this.DeleteButton.ForeColor = System.Drawing.Color.SpringGreen;
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // timer1
             // 
@@ -320,8 +306,6 @@ namespace Forum_Mysql
             this.Controls.Add(this.LabelLastname);
             this.Controls.Add(this.FirstNText);
             this.Controls.Add(this.LabelName);
-            this.Controls.Add(this.TextID);
-            this.Controls.Add(this.labelID);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -337,9 +321,6 @@ namespace Forum_Mysql
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.TextBox TextID;
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.TextBox FirstNText;
         private System.Windows.Forms.Label LabelLastname;

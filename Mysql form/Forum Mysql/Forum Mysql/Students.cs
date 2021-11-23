@@ -15,7 +15,7 @@ namespace Forum_Mysql
 
         Connect connect = new Connect();
 
-        public bool AddStudents(int Old, string Fname, string Lname, string email, string phone, int StudentNumber)
+        public bool AddStudentsFemale(int Old, string Fname, string Lname, string email, string phone, int StudentNumber)
         {
             MySqlCommand Command = new MySqlCommand();
             string AddQuestion = "INSERT INTO female_students " +
@@ -45,6 +45,40 @@ namespace Forum_Mysql
             }
 
         }
+
+        public bool AddStudentsMale(int Old, string Fname, string Lname, string email, string phone, int StudentNumber)
+        {
+            MySqlCommand Command = new MySqlCommand();
+            string AddQuestion = "INSERT INTO male_students " +
+                "(Old, FirstName, LastName, Email, Phone, StudentNumber) " +
+                "VALUES (@old, @enm, @snm, @eml, @puh, @ono); ";
+
+            Command.CommandText = AddQuestion;
+            Command.Connection = connect.Inject();
+
+            Command.Parameters.Add("@old", MySqlDbType.Int32).Value = Old;
+            Command.Parameters.Add("@enm", MySqlDbType.VarChar).Value = Fname;
+            Command.Parameters.Add("@snm", MySqlDbType.VarChar).Value = Lname;
+            Command.Parameters.Add("@eml", MySqlDbType.VarChar).Value = email;
+            Command.Parameters.Add("@puh", MySqlDbType.VarChar).Value = phone;
+            Command.Parameters.Add("@ono", MySqlDbType.Int32).Value = StudentNumber;
+
+            connect.StartConnection();
+            if (Command.ExecuteNonQuery() == 1)
+            {
+                connect.CloseConnection();
+                return true;
+            }
+            else
+            {
+                connect.CloseConnection();
+                return false;
+            }
+
+        }
+
+
+
 
         public DataTable GetFemaleStudents()
         {
@@ -120,28 +154,49 @@ namespace Forum_Mysql
             
         }
 
-        public bool DeleteStudent(string KnownN)
+        public bool DeleteStudentFemale(string KnownN)
         {
             MySqlCommand command = new MySqlCommand();
-            string deleteQuestion = "DELETE FROM yhteystiedot WHERE Old = @old";
+            string deleteQuestion = "DELETE FROM `female_students` WHERE `StudentNumber` = @kno";
             command.CommandText = deleteQuestion;
             command.Connection = connect.Inject();
 
-            command.Parameters.Add("@old", MySqlDbType.UInt32).Value = KnownN;
+            command.Parameters.Add("@kno", MySqlDbType.UInt32).Value = KnownN;
 
             connect.StartConnection();
             if (command.ExecuteNonQuery() == 1)
             {
                 connect.CloseConnection();
                 return true;
-            } else
+            }
+            else
             {
                 connect.CloseConnection();
                 return false;
             }
-
-
         }
+            public bool DeleteStudentMale(string KnownN)
+            {
+                MySqlCommand command = new MySqlCommand();
+                string deleteQuestion = "DELETE FROM `male_students` WHERE `StudentNumber` = @kno";
+                command.CommandText = deleteQuestion;
+                command.Connection = connect.Inject();
+
+                command.Parameters.Add("@kno", MySqlDbType.UInt32).Value = KnownN;
+
+                connect.StartConnection();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    connect.CloseConnection();
+                    return true;
+                }
+                else
+                {
+                    connect.CloseConnection();
+                    return false;
+                }
+
+            }
 
 
 
