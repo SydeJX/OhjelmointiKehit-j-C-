@@ -50,7 +50,7 @@ namespace start
                 if (nimi == tyttö)
                 {
                     VastausLB.Visible = true;
-                    VastausLB.Text = "Nimesi on " + number + ", suosituin poikien nimi vuonna 2020";
+                    VastausLB.Text = "Nimesi on " + number + ", suosituin Tyttön nimi vuonna 2020";
                 }
                 numberI++;
             }
